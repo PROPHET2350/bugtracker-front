@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Create User</h1>
+<div mat-dialog-content>
+  <form #addUserForm="ngForm">
+    <div></div>
+    <div class="div-full">
+      <mat-form-field class="div-full">
+        <mat-label>Name</mat-label>
+        <input
+          type="text"
+          matInput
+          minlength="4"
+          autocomplete="off"
+          placeholder="name"
+          required
+          name="name"
+          [(ngModel)]="name"
+        />
+      </mat-form-field>
+      <div class="div-full">
+        <mat-form-field class="div-full">
+          <mat-label>Users</mat-label>
+          <mat-select
+            name="users"
+            type="select"
+            [(ngModel)]="users"
+            matInput
+            required
+            (ngModelChane)="(users)"
+            placeholder="Users"
+            multiple
+          >
+            <div #repeterDiv *ngFor="let user of data">
+              <mat-option
+                (click)="addUser($event, user.id, user.username)"
+                value="{{ user.id }}"
+                >{{ user.username }}
+              </mat-option>
+            </div>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button mat-dialog-close>Close</button>
+  <button mat-flat-button color="primary" (click)="save(addUserForm)">
+    Add
+  </button>
+</div>

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  flex-direction: column;
+}
+table {
+  width: 100%;
+}
+.mat-elevation-z8 {
+  width: 80%;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+#form-filter {
+  width: 150px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.mat-column-actions {
+  width: 150px;
+}
+th {
+  font-weight: bold;
+  color: rgb(206, 100, 255);
+}

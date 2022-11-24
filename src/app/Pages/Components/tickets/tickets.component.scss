@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  flex-direction: column;
+}
+table {
+  width: 100%;
+}
+.mat-elevation-z8 {
+  width: 80%;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#form-filter {
+  width: 150px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+#card-container {
+  width: 90%;
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
+    0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+#card-container-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+#card-info-container {
+  width: 100%;
+  margin-right: 5px;
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
+    0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+.info-card-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+mat-card-content {
+  overflow-wrap: break-word;
+}
+#card-comments-container {
+  width: 100%;
+  height: 273px;
+  overflow-y: auto;
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
+    0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+.comment-card-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.users-info {
+  height: 50%;
+  overflow: auto;
+}
+mat-card-subtitle,
+th {
+  font-weight: bold;
+  color: rgb(206, 100, 255);
+}
+mat-form-field {
+  width: 100%;
+}
+.mat-column-actions {
+  width: 150px;
+}

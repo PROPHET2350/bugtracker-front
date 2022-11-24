@@ -1,0 +1,73 @@
+<div class="container">
+  <form
+    #addTicketForm="ngForm"
+    (ngSubmit)="modifyRol(addTicketForm)"
+    autocomplete="off"
+  >
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Reset User Password</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <div class="name-form">
+          <mat-form-field class="name-form">
+            <mat-label>New Password</mat-label>
+            <input
+              type="{{ inputType }}"
+              autocomplete="disabled"
+              matInput
+              required
+              minlength="8"
+              placeholder="password"
+              name="password"
+              [(ngModel)]="password"
+            />
+            <mat-icon
+              matSuffix
+              *ngIf="inputType === 'password'"
+              (click)="handleChangeInputPasswordType('text')"
+              >lock</mat-icon
+            >
+            <mat-icon
+              matSuffix
+              *ngIf="inputType === 'text'"
+              (click)="handleChangeInputPasswordType('password')"
+              >lock_open</mat-icon
+            >
+          </mat-form-field>
+        </div>
+        <div class="name-form">
+          <mat-form-field class="name-form">
+            <mat-label>Confirm Password</mat-label>
+            <input
+              type="{{ inputType }}"
+              autocomplete="disabled"
+              matInput
+              required
+              minlength="8"
+              placeholder="confirm password"
+              name="confirmPassword"
+              [(ngModel)]="confirmPassword"
+            />
+            <mat-icon
+              matSuffix
+              *ngIf="inputType === 'password'"
+              (click)="handleChangeInputPasswordType('text')"
+              >lock</mat-icon
+            >
+            <mat-icon
+              matSuffix
+              *ngIf="inputType === 'text'"
+              (click)="handleChangeInputPasswordType('password')"
+              >lock_open</mat-icon
+            >
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary" type="submit">Modify</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

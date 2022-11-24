@@ -1,0 +1,84 @@
+<h1 mat-dialog-title>Dialog with elements</h1>
+<div mat-dialog-content>
+  <form #addTicketForm="ngForm">
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Type</mat-label>
+        <mat-select
+          name="type"
+          type="select"
+          [(ngModel)]="type"
+          matInput
+          required
+        >
+          <mat-option value="issue">Issue</mat-option>
+          <mat-option value="bug">Bug</mat-option>
+          <mat-option value="feature">Feature</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" style="margin-left: 5px">
+        <mat-label>priority</mat-label>
+        <mat-select
+          name="priority"
+          type="select"
+          required
+          [(ngModel)]="priority"
+          matInput
+        >
+          <mat-option value="low">low</mat-option>
+          <mat-option value="medium">medium</mat-option>
+          <mat-option value="high">high</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="div-full">
+      <mat-form-field class="div-full">
+        <mat-label>Name</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="name"
+          required
+          name="name"
+          [(ngModel)]="name"
+        />
+      </mat-form-field>
+    </div>
+    <div class="div-full">
+      <mat-form-field class="div-full">
+        <mat-label>Users</mat-label>
+        <mat-select
+          type="select"
+          matInput
+          required
+          name="users"
+          [(ngModel)]="users"
+          (ngModelChane)="(users)"
+          placeholder="Users"
+          multiple
+        >
+          <div #repeterDiv *ngFor="let user of data">
+            <mat-option value="{{ user.id }}">{{ user.name }} </mat-option>
+          </div>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="div-full">
+      <mat-form-field class="div-full">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          required
+          name="description"
+          [(ngModel)]="description"
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button mat-dialog-close>Close</button>
+  <button mat-flat-button color="primary" (click)="save(addTicketForm)">
+    Add
+  </button>
+</div>

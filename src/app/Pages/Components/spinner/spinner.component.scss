@@ -1,0 +1,198 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+a {
+  position: fixed;
+  bottom: 2%;
+  display: block;
+  text-align: center;
+  color: #0fa;
+  font-family: "Lato", sans-serif;
+  text-decoration: none !important;
+  width: 100%;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(90deg, #00b377, #00d68f);
+  box-shadow: inset 0px 0px 90px rgba(0, 0, 0, 0.5);
+  margin: 0px;
+  padding: 0px;
+}
+
+.demo {
+  width: 100px;
+  height: 102px;
+  border-radius: 100%;
+  position: absolute;
+  top: 45%;
+  left: calc(50% - 50px);
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.circle .inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 5px solid rgba(0, 255, 170, 0.7);
+  border-right: none;
+  border-top: none;
+  backgroudn-clip: padding;
+  box-shadow: inset 0px 0px 10px rgba(0, 255, 170, 0.15);
+}
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.circle:nth-of-type(0) {
+  transform: rotate(0deg);
+}
+.circle:nth-of-type(0) .inner {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+.circle:nth-of-type(1) {
+  transform: rotate(70deg);
+}
+.circle:nth-of-type(1) .inner {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+.circle:nth-of-type(2) {
+  transform: rotate(140deg);
+}
+.circle:nth-of-type(2) .inner {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+.demo {
+  -webkit-animation: spin 5s infinite linear;
+  animation: spin 5s infinite linear;
+}
+
+//CYBERPUNK
+
+// $spinner-size: 200px; // 200px
+// $spinner-thickness: 4px; // 4px
+// $spinner-speed: 1.2s; // 1.2s
+
+// $spinner-3d: true; // true
+// $spinner-loops: infinite; // infinite (be careful, save the batteries!)
+
+// // Spinner ----------------------------------
+
+// .spinner {
+//   position: relative;
+//   margin: auto;
+//   box-sizing: border-box;
+//   background-clip: padding-box;
+//   width: $spinner-size;
+//   height: $spinner-size;
+//   border-radius: $spinner-size / 2;
+//   border: $spinner-thickness solid hsla(0, 0%, 100%, 0.1);
+//   @if ($spinner-3d) {
+//     // mask smoothens out the anti-aliasing artifacts in the back.
+//     -webkit-mask: linear-gradient(hsla(0, 0%, 0%, 0.1), hsla(0, 0%, 0%, 1) 90%);
+//     transform-origin: 50% 60%;
+//     transform: perspective($spinner-size) rotateX(66deg);
+//     animation: spinner-wiggle $spinner-speed $spinner-loops;
+//   }
+// }
+
+// @keyframes spinner-wiggle {
+//   30% {
+//     transform: perspective($spinner-size) rotateX(66deg);
+//   }
+//   40% {
+//     transform: perspective($spinner-size) rotateX(65deg);
+//   }
+//   50% {
+//     transform: perspective($spinner-size) rotateX(68deg);
+//   }
+//   60% {
+//     transform: perspective($spinner-size) rotateX(64deg);
+//   }
+// }
+
+// .spinner:before,
+// .spinner:after {
+//   content: "";
+//   position: absolute;
+//   margin: -$spinner-thickness;
+//   box-sizing: inherit;
+//   width: inherit;
+//   height: inherit;
+//   border-radius: inherit;
+//   opacity: 0.05;
+//   border: inherit;
+//   border-color: transparent;
+//   animation: spinner-spin $spinner-speed cubic-bezier(0.6, 0.2, 0, 0.8)
+//       $spinner-loops,
+//     spinner-fade $spinner-speed linear $spinner-loops;
+// }
+
+// .spinner:before {
+//   border-top-color: hsl(190, 100%, 70%);
+// }
+
+// .spinner:after {
+//   border-top-color: hsl(50, 80%, 70%);
+//   animation-delay: $spinner-speed * 0.25;
+// }
+
+// @keyframes spinner-spin {
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
+// @keyframes spinner-fade {
+//   20% {
+//     opacity: 0.1;
+//   }
+//   40% {
+//     opacity: 1;
+//   }
+//   60% {
+//     opacity: 0.1;
+//   }
+// }
+
+// // Page ----------------------------------
+
+// body {
+//   display: flex;
+//   padding: 50px;
+//   box-sizing: border-box;
+//   background: radial-gradient(hsl(200, 40%, 20%), hsl(200, 30%, 6%));
+// }
+
+// html,
+// body {
+//   height: 100%;
+// }

@@ -1,0 +1,111 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    [fxHide.xs]="false"
+    [fxHide]="true"
+  >
+    <mat-icon class="account-icon">menu</mat-icon>
+  </button>
+  <span> Bugtracker </span>
+  <span class="example-spacer"></span>
+  <div class="user-options" *ngIf="user$">
+    <button mat-button [matMenuTriggerFor]="menu">
+      Projects <mat-icon>swap_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <div class="" *ngFor="let team of teams$">
+        <button mat-menu-item (click)="onClickButtonProjecChange(team.id)">
+          {{ team.name }}
+        </button>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-menu>
+    <button
+      mat-icon-button
+      class="account-box-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <mat-icon class="account-icon">account_box</mat-icon>
+    </button>
+  </div>
+  <div class="" *ngIf="!user$" style="padding: 6.51px">
+    <div class="example-button-row">
+      <button mat-raised-button>sign-in</button>
+    </div>
+  </div>
+</mat-toolbar>
+<mat-sidenav #sidenav fxLayout="column">
+  <div fxLayout="column">
+    <mat-nav-list>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span mat-line>home</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>backup</mat-icon>
+        <span mat-line>Backup</span>
+      </a>
+    </mat-nav-list>
+  </div>
+</mat-sidenav>
+<mat-sidenav-container (click)="sidenav.close()">
+  <mat-sidenav mode="side" opened="true" [fxHide.xs]="true" class="aside">
+    <mat-nav-list>
+      <a
+        mat-list-item
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="['/Home/Dashboard']"
+      >
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span mat-line>home</span>
+      </a>
+      <mat-divider></mat-divider>
+      <a
+        mat-list-item
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="['/Home/Tickets']"
+      >
+        <mat-icon mat-list-icon>bug_report</mat-icon>
+        <span mat-line>Tickets</span>
+      </a>
+      <mat-divider></mat-divider>
+      <mat-expansion-panel
+        hideToggle
+        *ngIf="isAdmin()"
+        #mep="matExpansionPanel"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon id="admin-icon">work</mat-icon>
+            <span mat-line>Admin</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+        <a
+          mat-list-item
+          [routerLink]="['/Home/Users']"
+          (click)="mep.expanded = false"
+        >
+          <mat-icon class="fa">keyboard_arrow_right</mat-icon>
+          Users
+        </a>
+        <mat-divider></mat-divider>
+        <a
+          mat-list-item
+          [routerLink]="['/Home/Projects']"
+          (click)="mep.expanded = false"
+        >
+          <mat-icon class="fa">keyboard_arrow_right</mat-icon>
+          Projects
+        </a>
+      </mat-expansion-panel>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

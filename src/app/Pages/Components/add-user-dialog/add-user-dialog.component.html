@@ -1,0 +1,58 @@
+<h1 mat-dialog-title>Create User</h1>
+<div mat-dialog-content>
+  <form #addUserForm="ngForm">
+    <div></div>
+    <div class="div-full">
+      <mat-form-field class="div-full">
+        <mat-label>Username</mat-label>
+        <input
+          type="text"
+          matInput
+          minlength="4"
+          autocomplete="off"
+          placeholder="username"
+          required
+          name="username"
+          [(ngModel)]="username"
+        />
+      </mat-form-field>
+    </div>
+    <div class="div-full">
+      <mat-form-field class="div-full">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          minlength="8"
+          autocomplete="off"
+          placeholder="Password"
+          required
+          name="password"
+          [(ngModel)]="password"
+        />
+      </mat-form-field>
+    </div>
+    <div class="div-full">
+      <mat-form-field class="div-full">
+        <mat-label>Rol</mat-label>
+        <mat-select
+          name="rol"
+          type="select"
+          [(ngModel)]="rol"
+          matInput
+          required
+          placeholder="Rol"
+        >
+          <mat-option value="1">Admin</mat-option>
+          <mat-option value="2">User</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button mat-dialog-close>Close</button>
+  <button mat-flat-button color="primary" (click)="save(addUserForm)">
+    Add
+  </button>
+</div>

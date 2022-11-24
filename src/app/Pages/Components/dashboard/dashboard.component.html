@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="header">
+    <h2 #headerText>
+      {{ headerText }}
+    </h2>
+  </div>
+  <mat-grid-list cols="3" rowHeight="300" #grid>
+    <mat-grid-tile>
+      <app-graph-card
+        [Phrase]="'Tickets By Type'"
+        [single]="graphStatus"
+      ></app-graph-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-graph-card
+        [Phrase]="'Tickets By Priority'"
+        [single]="graphType"
+      ></app-graph-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-graph-card
+        [Phrase]="'Tickets By Status'"
+        [single]="graphPriority"
+      ></app-graph-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

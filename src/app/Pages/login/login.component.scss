@@ -1,0 +1,40 @@
+.example-card {
+  max-width: 350px;
+  height: 300px;
+  box-shadow: 1px 1px 5px 1px #353b53;
+}
+
+.center-content {
+  text-align: -webkit-center;
+  background-color: #3f51b5;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  margin-top: 10px;
+  width: 100%;
+}
+.mat-button {
+  margin-top: 10px;
+  width: 100%;
+  color: white;
+  height: 40px;
+  background-color: #3f51b5;
+}
+
+@media (max-width: 500px) {
+  .example-card {
+    width: 200px;
+  }
+  .mat-button {
+    width: 150px;
+  }
+}

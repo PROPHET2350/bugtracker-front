@@ -1,0 +1,85 @@
+<div class="container">
+  <form #addTicketForm="ngForm" (ngSubmit)="addComment(addTicketForm.value)">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Modify Ticket</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Type</mat-label>
+            <mat-select name="type" type="select" [(ngModel)]="type" matInput>
+              <mat-option value="issue">Issue</mat-option>
+              <mat-option value="bug">Bug</mat-option>
+              <mat-option value="feature">Feature</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" style="margin-left: 5px">
+            <mat-label>priority</mat-label>
+            <mat-select
+              name="priority"
+              type="select"
+              [(ngModel)]="priority"
+              matInput
+            >
+              <mat-option value="low">low</mat-option>
+              <mat-option value="medium">medium</mat-option>
+              <mat-option value="high">high</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="name"
+              value=""
+              name="name"
+              [(ngModel)]="name"
+            />
+          </mat-form-field>
+          <mat-form-field style="margin-left: 5px">
+            <mat-label>state</mat-label>
+            <mat-select name="state" type="select" [(ngModel)]="state" matInput>
+              <mat-option value="active">active</mat-option>
+              <mat-option value="inactive">inactive</mat-option>
+              <mat-option value="standby">standby</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-form-field class="name-form">
+          <mat-label>Users</mat-label>
+          <mat-select
+            name="users"
+            type="select"
+            [(ngModel)]="users"
+            matInput
+            (ngModelChane)="(users)"
+            placeholder="Users"
+            multiple
+          >
+            <div #repeterDiv *ngFor="let user of usersInProject">
+              <mat-option value="{{ user.id }}">{{ user.name }} </mat-option>
+            </div>
+          </mat-select>
+        </mat-form-field>
+        <div class="name-form">
+          <mat-form-field class="name-form">
+            <mat-label>Description</mat-label>
+            <textarea
+              matInput
+              name="description"
+              [(ngModel)]="description"
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary" type="submit">Modify</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

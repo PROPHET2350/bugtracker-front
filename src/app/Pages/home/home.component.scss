@@ -1,0 +1,29 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.account-icon {
+  transform: scale(1.5);
+}
+.account-box-icon {
+  width: 50px;
+  height: 50px;
+}
+mat-sidenav-container {
+  height: calc(100% - 64px);
+  background-color: aliceblue;
+}
+.aside {
+  width: 150px;
+  background-color: rgb(207, 189, 255);
+  height: 100%;
+}
+mat-expansion-panel {
+  background-color: transparent;
+}
+mat-divider {
+  width: 100%;
+}
+#admin-icon {
+  margin-right: 15px;
+  margin-left: 0px;
+}
